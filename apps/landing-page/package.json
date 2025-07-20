@@ -1,0 +1,35 @@
+{
+  "name": "landing-page",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "vue-tsc": "vue-tsc",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@astrojs/vue": "^5.1.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "advancedFormat": "link:dayjs/plugin/advancedFormat",
+    "astro": "^5.12.0",
+    "dayjs": "^1.11.13",
+    "install": "^0.13.0",
+    "lucide-vue-next": "^0.525.0",
+    "pinia": "^3.0.3",
+    "sass": "^1.89.2",
+    "tailwindcss": "^4.1.11",
+    "vue": "3.5.17",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin-ts": "^2.8.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-plugin-vue": "^9.28.0"
+  }
+}
