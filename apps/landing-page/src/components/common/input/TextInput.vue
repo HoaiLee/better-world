@@ -40,5 +40,6 @@ const labelProps = computed<BaseInputProps>(() => ({
 	required: props.required,
 	labelClass: props.labelClass,
 	disabled: props.disabled,
+	errorMessage: props.errorMessage,
 }));
 </script>

@@ -13,6 +13,16 @@
 				:variant="variants[index]"
       />
     </div>
+		
+		<div class="flex flex-wrap justify-center gap-9 mt-17">
+			<img
+				v-for="item in 7"
+				:key="item"
+				alt="Brand"
+				class="h-11 w-auto"
+				:src="`/images/home/brand/brand_${item + 1}.png`"
+			/>
+		</div>
   </div>
 </template>
 
