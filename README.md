@@ -46,12 +46,6 @@ better-world/
 
 The landing page is built with Astro and Vue.js, featuring:
 
-- **Responsive Design** - Mobile-first approach
-- **Component Architecture** - Reusable Vue components
-- **State Management** - Pinia for global state
-- **Styling** - Tailwind CSS for utility-first styling
-- **TypeScript** - Full type safety
-
 ### Component Structure
 ```
 src/components/
@@ -89,32 +83,12 @@ NODE_ENV=development
 
 ## 🚀 Deployment
 
-### Production Considerations
-
-1. **Database:** Use PostgreSQL or MySQL for production
-2. **Environment Variables:** Generate secure keys and secrets
-3. **File Storage:** Configure cloud storage for uploads
-4. **CORS:** Configure proper CORS settings
-5. **SSL:** Enable HTTPS in production
-
 ### Build for Production
 
 ```bash
 # Build all applications
 pnpm build
-
-# The built applications will be in:
-# - apps/api/dist/ (Strapi)
-# - apps/landing-page/dist/ (Astro)
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ### Development Guidelines
 
@@ -131,28 +105,3 @@ pnpm build
 - [Astro Documentation](https://docs.astro.build/) - Frontend framework docs
 - [Turborepo Documentation](https://turbo.build/repo/docs) - Monorepo build system
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support
-
-If you encounter any issues:
-
-1. Check the [documentation](apps/api/LOCAL_SETUP.md)
-2. Review the troubleshooting section
-3. Create an issue with detailed information about the problem
-
-## 🌟 Features
-
-- **Modern Tech Stack** - Built with the latest web technologies
-- **Type Safety** - Full TypeScript support across the stack
-- **Developer Experience** - Hot reload, linting, and type checking
-- **Scalable Architecture** - Monorepo structure for easy scaling
-- **Content Management** - Powerful CMS with REST API
-- **Responsive Design** - Mobile-first approach
-- **Performance Optimized** - Fast builds and runtime performance
-
----
-
-Built with ❤️ for a better world.

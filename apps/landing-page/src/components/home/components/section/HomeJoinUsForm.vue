@@ -10,7 +10,7 @@
       </span>
     </div>
 
-    <div class="flex items-center justify-center gap-5 mt-6">
+    <div class="flex items-center justify-center gap-2 md:gap-5 mt-6">
       <InfoItem
         :icon="CalendarDaysIcon"
         :label="date"
@@ -131,7 +131,7 @@ type JoinUsForm = {
 };
 
 const date = dayjs(new Date()).format('MMMM Do');
-const time = dayjs(new Date()).format('h:mm A z');
+const time = dayjs(new Date()).format('h:mm A');
 
 const form = ref<JoinUsForm>({
 	first_name: '',
@@ -148,9 +148,9 @@ const rules: ValidationRules<typeof form.value> = {
 	last_name: { required },
 	organization: { required },
 	email: { required, email, },
-	phone_number: { required },
-	type_of_funds: { required },
-	fundraising_target: { required },
+	phone_number: { },
+	type_of_funds: { },
+	fundraising_target: { },
 };
 
 const TYPE_OF_FUNDRAISERS_OPTIONS = [
@@ -205,9 +205,9 @@ const submit = (): void => {
 	
 	useFetch({
 		method: 'POST',
-		endpoint: 'join-us',
+		endpoint: 'form-submissions',
 		options: {
-			body: { ...form.value }
+			body: JSON.stringify({ data: form.value }),
 		}
 	})
 };

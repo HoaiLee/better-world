@@ -11,29 +11,9 @@
   },
   "speakers": [
     {
-      "name": "Dr. Sarah Chen",
-      "photo": "/uploads/sarahbaker@strapi.io.jpg",
+      "name": "Avin",
+      "photo": "/images/home/speakers/sample.png",
       "bio": "<p>Dr. Sarah Chen is a leading expert in sustainable technology and community development. With over 15 years of experience in the tech industry, she has pioneered innovative solutions that bridge the gap between technology and social impact.</p><p>As the founder of GreenTech Solutions, Sarah has helped over 200 communities implement sustainable technology practices, reducing their carbon footprint by an average of 40%. Her work has been recognized by the United Nations and featured in major publications worldwide.</p><p>Sarah holds a Ph.D. in Environmental Engineering from MIT and is passionate about empowering the next generation of tech leaders to create positive change.</p>"
-    },
-    {
-      "name": "Marcus Rodriguez",
-      "photo": "/uploads/daviddoe@strapi.io.jpg",
-      "bio": "<p>Marcus Rodriguez is a serial entrepreneur and community advocate who has built and scaled multiple successful startups focused on social impact. His journey began in his hometown of Detroit, where he witnessed firsthand the transformative power of technology in revitalizing communities.</p><p>As the CEO of CommunityConnect, Marcus has developed platforms that have connected over 50,000 volunteers with local organizations, creating lasting positive change in communities across the country. His innovative approach to community engagement has earned him recognition as one of Forbes' 30 Under 30 in Social Entrepreneurship.</p><p>Marcus believes that technology should serve humanity and is dedicated to creating tools that make it easier for people to help each other.</p>"
-    },
-    {
-      "name": "Dr. Emily Watson",
-      "photo": "/uploads/default-image.png",
-      "bio": "<p>Dr. Emily Watson is a renowned psychologist and digital wellness expert who specializes in the intersection of mental health and technology. With a background in clinical psychology and a master's in Human-Computer Interaction, Emily has spent the last decade researching how technology can be designed to support rather than harm our mental well-being.</p><p>She has consulted with major tech companies on ethical design practices and has published over 50 peer-reviewed papers on digital wellness. Emily is the author of 'Mindful Tech: Building a Healthier Relationship with Technology' and regularly speaks at conferences worldwide.</p><p>Her mission is to ensure that as technology advances, it enhances rather than diminishes our human connections and well-being.</p>"
-    },
-    {
-      "name": "Alex Thompson",
-      "photo": "/uploads/default-image.png",
-      "bio": "<p>Alex Thompson is a cybersecurity expert and digital rights advocate who has dedicated their career to protecting vulnerable communities online. With experience working for both government agencies and private sector companies, Alex brings a unique perspective on the challenges and opportunities in digital security.</p><p>As the founder of SecureCommunities, Alex has developed cybersecurity training programs that have reached over 100,000 people in underserved communities. Their work focuses on making cybersecurity accessible and understandable for everyone, regardless of technical background.</p><p>Alex is a frequent speaker at cybersecurity conferences and has testified before Congress on issues related to digital privacy and community safety online.</p>"
-    },
-    {
-      "name": "Priya Patel",
-      "photo": "/uploads/default-image.png",
-      "bio": "<p>Priya Patel is a data scientist and AI ethicist who specializes in developing responsible artificial intelligence solutions for social good. With a background in computer science and philosophy, Priya brings a unique perspective to the development of AI systems that serve humanity.</p><p>She has led teams at major tech companies in developing AI systems for healthcare, education, and environmental protection. Priya is particularly passionate about ensuring that AI systems are fair, transparent, and beneficial to all communities, especially those that have been historically underserved by technology.</p><p>Her research on algorithmic bias and fairness has been published in top-tier journals and has influenced policy decisions at both the national and international levels.</p>"
     }
   ],
   "testimonials": [
@@ -84,42 +64,7 @@
       "description": "Join Dr. Sarah Chen as she shares insights on how technology can be leveraged to create more sustainable and resilient communities. Learn about real-world case studies and practical strategies for implementing green technology solutions in your own community.",
       "date": "2024-02-15",
       "time": "14:00",
-      "badge_text": "Featured"
-    },
-    {
-      "title": "Digital Wellness in the Age of Social Media",
-      "description": "Dr. Emily Watson will explore the impact of social media on mental health and share strategies for maintaining digital wellness. Discover how to create healthier relationships with technology while staying connected to your community.",
-      "date": "2024-02-22",
-      "time": "15:30",
-      "badge_text": "New"
-    },
-    {
-      "title": "Cybersecurity for Community Organizations",
-      "description": "Alex Thompson will provide essential cybersecurity guidance for community organizations and nonprofits. Learn how to protect your organization's data and maintain the trust of your community members in an increasingly digital world.",
-      "date": "2024-03-01",
-      "time": "13:00",
-      "badge_text": "Popular"
-    },
-    {
-      "title": "AI Ethics and Community Impact",
-      "description": "Priya Patel will discuss the ethical considerations of AI implementation in community settings. Explore how artificial intelligence can be developed and deployed responsibly to benefit all members of society.",
-      "date": "2024-03-08",
-      "time": "16:00",
-      "badge_text": "Featured"
-    },
-    {
-      "title": "Community Engagement Strategies for the Digital Age",
-      "description": "Marcus Rodriguez shares proven strategies for building and maintaining engaged communities in the digital age. Learn how to leverage technology to create meaningful connections and drive positive change.",
-      "date": "2024-03-15",
-      "time": "14:30",
-      "badge_text": "New"
-    },
-    {
-      "title": "Fundraising in the Digital Era",
-      "description": "Discover innovative digital fundraising strategies that can help your organization reach new donors and increase community support. Learn about the latest tools and techniques for successful online fundraising campaigns.",
-      "date": "2024-03-22",
-      "time": "15:00",
-      "badge_text": "Popular"
+      "badge_text": "LIVE WEBINAR"
     }
   ]
 }

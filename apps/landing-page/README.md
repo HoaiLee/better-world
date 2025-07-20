@@ -4,3 +4,4 @@
 - **Tailwind CSS** - Utility-first CSS framework
 - **Pinia** - State management
 - **TypeScript** - Type safety
+

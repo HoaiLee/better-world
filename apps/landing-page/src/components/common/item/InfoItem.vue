@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap items-center gap-2">
+  <div class="flex flex-wrap items-center gap-1 md:gap-2">
     <div class="rounded-circle p-2 bg-denim">
       <span class="text-white">
         <Component

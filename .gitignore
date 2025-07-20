@@ -4,6 +4,7 @@
 node_modules
 .pnp
 .turbo
+.astro
 .pnp.js
 .yarn/install-state.gz
 
