@@ -31,7 +31,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-[9px] gap-y-3">
         <TextInput
           v-model="form.first_name"
-					:error-message="errorMessages.first_name"
+          :error-message="errorMessages.first_name"
           label="First name"
           class="col-span-1"
           placeholder="Mary"
@@ -40,7 +40,7 @@
 
         <TextInput
           v-model="form.last_name"
-					:error-message="errorMessages.last_name"
+          :error-message="errorMessages.last_name"
           label="Last name"
           class="col-span-1"
           placeholder="Smith"
@@ -49,7 +49,7 @@
 
         <TextInput
           v-model="form.organization"
-					:error-message="errorMessages.organization"
+          :error-message="errorMessages.organization"
           label="Organization name"
           placeholder="BetterWorld"
           class="col-span-1"
@@ -58,7 +58,7 @@
 
         <TextInput
           v-model="form.email"
-					:error-message="errorMessages.email"
+          :error-message="errorMessages.email"
           label="Email"
           placeholder="mary@gmail.com"
           class="col-span-1"
@@ -96,10 +96,14 @@
           type="submit"
         />
       </div>
-			
-			<span class="absolute bottom-0 left-0 -translate-x-[110%] -translate-y-[10px]">
-				<img src="/images/home/arrow.png" width="69" height="59">
-			</span>
+
+      <span class="absolute bottom-0 left-0 -translate-x-[110%] -translate-y-[10px]">
+        <img
+          src="/images/home/arrow.png"
+          width="69"
+          height="59"
+        >
+      </span>
     </form>
   </div>
 </template>
@@ -112,9 +116,9 @@ import dayjs from 'dayjs';
 import TextInput from 'components/common/input/TextInput.vue';
 import BWButton from 'components/common/button/BWButton.vue';
 import BWCheckboxGroup from 'components/common/checkbox/BWCheckboxGroup.vue';
-import advancedFormat from 'dayjs/plugin/advancedFormat'
-import timezone from 'dayjs/plugin/timezone'
-import useForm, { required, email, type ValidationRules } from 'src/composables/useForm.ts';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+import timezone from 'dayjs/plugin/timezone';
+import useForm, { email, required, type ValidationRules } from 'src/composables/useForm.ts';
 import { useFetch } from 'src/utils/api.ts';
 
 dayjs.extend(advancedFormat);
@@ -147,7 +151,7 @@ const rules: ValidationRules<typeof form.value> = {
 	first_name: { required },
 	last_name: { required },
 	organization: { required },
-	email: { required, email, },
+	email: { required, email },
 	phone_number: { },
 	type_of_funds: { },
 	fundraising_target: { },
@@ -198,17 +202,17 @@ const {
 
 const submit = (): void => {
 	validate();
-	
+
 	if (!isFormValid.value) {
 		return;
 	}
-	
-	useFetch({
+
+	void useFetch({
 		method: 'POST',
 		endpoint: 'form-submissions',
 		options: {
 			body: JSON.stringify({ data: form.value }),
-		}
-	})
+		},
+	});
 };
 </script>

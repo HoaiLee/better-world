@@ -195,7 +195,7 @@ module.exports = {
     'vue/no-duplicate-attr-inheritance': 'error',
     'vue/require-macro-variable-name': 'error',
     'vue/require-typed-ref': 'error',
-    'vue/no-unused-properties': 'error',
+    'vue/no-unused-properties': 'off',
     'vue/no-unused-emit-declarations': 'error',
     // As of eslint-plugin-vue v9.21.0, kebab-case named slots are not supported
     // 'vue/require-explicit-slots': 'error',

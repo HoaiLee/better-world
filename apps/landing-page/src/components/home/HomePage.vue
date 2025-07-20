@@ -10,11 +10,13 @@
           <HomeJoinUsForm class="flex-1 md:max-w-[542px] h-fit" />
         </div>
       </div>
-			
-			<div class="h-[100px]" />
 
-			<div class="absolute h-[420px] w-[200%] bg-white rounded-[70%]
-			bottom-0 right-0 left-0 -translate-x-[25%] translate-y-[25%]" />
+      <div class="h-[100px]" />
+
+      <div
+        class="absolute h-[420px] w-[200%] bg-white rounded-[70%]
+			bottom-0 right-0 left-0 -translate-x-[25%] translate-y-[25%]"
+      />
     </div>
 
     <div class="bg-white">

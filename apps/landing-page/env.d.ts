@@ -1,8 +1,8 @@
-interface ImportMetaEnv {
+type ImportMetaEnv = {
 	readonly API_PATH: string;
 	readonly STRAPI_TOKEN: string;
-}
+};
 
-interface ImportMeta {
+type ImportMeta = {
 	readonly env: ImportMetaEnv;
-}
+};

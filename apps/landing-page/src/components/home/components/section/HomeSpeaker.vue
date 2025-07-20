@@ -67,6 +67,7 @@ import BWChip from 'components/common/chip/BWChip.vue';
 import { useFetch } from 'src/utils/api.ts';
 import type { Pagination } from 'src/types/Panigation.ts';
 import { ref } from 'vue';
+import type { Speaker } from 'src/types/Speaker.ts';
 
 const speaker = ref<Speaker>();
 
@@ -74,12 +75,13 @@ const init = async (): Promise<void> => {
 	const response = await useFetch({
 		endpoint: 'speakers',
 		method: 'GET',
-	})
-	
-	const paginator: Pagination<Speaker[]> = await response.json();
-	
-	speaker.value = paginator.data[0];
-}
+	});
 
-init()
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	const paginator: Pagination<Speaker[]> = await response.json();
+
+	speaker.value = paginator.data?.[0];
+};
+
+void init();
 </script>

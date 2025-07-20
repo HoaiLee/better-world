@@ -11,7 +11,8 @@
       :class="[
         buttonTypeClasses,
         buttonSizeClasses,
-        'flex relative w-full text-center justify-center items-center cursor-pointer text-button transition-all duration-200 ease-out',
+        'flex relative w-full text-center justify-center items-center cursor-pointer' +
+          'text-button transition-all duration-200 ease-out',
         disabled || loading
           ? 'opacity-50 cursor-not-allowed'
           : 'hover:shadow hover:text-shadow transition-all duration-300 ease-in-out'

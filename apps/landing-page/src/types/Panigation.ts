@@ -6,6 +6,6 @@ export type Pagination<Type> = {
 			page: number;
 			pageSize: number;
 			pageCount: number;
-		}
-	}
-}
+		};
+	};
+};

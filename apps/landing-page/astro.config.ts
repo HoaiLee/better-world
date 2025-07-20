@@ -11,8 +11,8 @@ export default defineConfig({
 
 	env: {
 		schema: {
-			API_PATH: envField.string({context: 'client', access: 'public', optional: true}),
-			STRAPI_TOKEN: envField.string({context: 'client', access: 'public', optional: true}),
+			API_PATH: envField.string({ context: 'client', access: 'public', optional: true }),
+			STRAPI_TOKEN: envField.string({ context: 'client', access: 'public', optional: true }),
 		},
 	},
 

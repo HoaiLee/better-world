@@ -1,5 +1,5 @@
 import {
-  computed, ref, type Ref, unref,
+	computed, ref, type Ref, unref,
 } from 'vue';
 import { isEmpty } from 'lodash-es';
 
@@ -39,155 +39,155 @@ export const email: Validator = (value?: FormValue): boolean => (!!value
   && emailRegex.test(value));
 
 export const required = (value: FormValue): boolean => {
-  if (Array.isArray(value)) {
-    return !!value.length;
-  }
+	if (Array.isArray(value)) {
+		return !!value.length;
+	}
 
-  if (value === undefined || value === null) {
-    return false;
-  }
+	if (value === undefined || value === null) {
+		return false;
+	}
 
-  if (typeof value === 'boolean') {
-    return true;
-  }
+	if (typeof value === 'boolean') {
+		return true;
+	}
 
-  if (value instanceof Date) {
-    return !Number.isNaN(value.getTime());
-  }
+	if (value instanceof Date) {
+		return !Number.isNaN(value.getTime());
+	}
 
-  if (typeof value === 'object') {
-    return !isEmpty(value);
-  }
+	if (typeof value === 'object') {
+		return !isEmpty(value);
+	}
 
-  return !!String(value).length;
+	return !!String(value).length;
 };
 
 const getFieldErrorMessage = (
-  label: string | undefined,
-  errorType: ValidatorType | Omit<string, keyof Validator>,
-  param?: unknown,
+	label: string | undefined,
+	errorType: ValidatorType | Omit<string, keyof Validator>,
+	param?: unknown,
 ): string => {
-  switch (errorType) {
-    case 'required':
-    case 'requiredIf':
-      return `The ${label || 'field'} is required`;
-    case 'email':
-      return `The ${label || 'field'} must a valid email address.`;
-    case 'numeric':
-      return `The ${label || 'field'} must be a valid number.`;
-    case 'maxLength':
-      return `The ${label || 'field'} cannot have more than ${param} characters.`;
-    case 'minLength':
-      return `The ${label || 'field'} must have ${param} or more characters.`;
-    default:
-      return `The ${label || 'field'} is invalid`;
-  }
+	switch (errorType) {
+	case 'required':
+	case 'requiredIf':
+		return `The ${label || 'field'} is required`;
+	case 'email':
+		return `The ${label || 'field'} must a valid email address.`;
+	case 'numeric':
+		return `The ${label || 'field'} must be a valid number.`;
+	case 'maxLength':
+		return `The ${label || 'field'} cannot have more than ${String(param)} characters.`;
+	case 'minLength':
+		return `The ${label || 'field'} must have ${String(param)} or more characters.`;
+	default:
+		return `The ${label || 'field'} is invalid`;
+	}
 };
 
 export const requiredIf = (isRequired?: ((v: FormValue) => boolean)) => (value: FormValue) => {
-  const isValueRequired = isRequired?.(value);
+	const isValueRequired = isRequired?.(value);
 
-  if (isValueRequired) {
-    return required(value);
-  }
+	if (isValueRequired) {
+		return required(value);
+	}
 
-  return true;
+	return true;
 };
 
 const useForm = <Type extends Record<string, FormValue>>(
-  { form, rules, labels }: FormValidation<Type> = {},
+	{ form, rules, labels }: FormValidation<Type> = {},
 ) => {
-  const errorMessages = ref<Record<string, string | undefined>>({});
-  const generalErrorMessage = ref('');
+	const errorMessages = ref<Record<string, string | undefined>>({});
+	const generalErrorMessage = ref('');
 
-  const isFormValid = computed(() => !Object.values(errorMessages.value)
-    .filter((error) => !!error).length);
+	const isFormValid = computed(() => !Object.values(errorMessages.value)
+		.filter((error) => !!error).length);
 
-  const setErrorMessage = (errors: Record<string, string[]>) => {
-    const errorResult: Record<string, string> = {};
+	const setErrorMessage = (errors: Record<string, string[]>) => {
+		const errorResult: Record<string, string> = {};
 
-    Object.keys(errors).forEach((error) => {
-      errorResult[error] = errors[error]!.join(', ');
-    });
+		Object.keys(errors).forEach((error) => {
+			errorResult[error] = errors[error].join(', ');
+		});
 
-    errorMessages.value = errorResult;
-  };
+		errorMessages.value = errorResult;
+	};
 
-  const setGenericError = (message = 'Error') => {
-    generalErrorMessage.value = message;
-  };
+	const setGenericError = (message = 'Error') => {
+		generalErrorMessage.value = message;
+	};
 
-  const resetError = () => {
-    errorMessages.value = {};
-    generalErrorMessage.value = '';
-  };
+	const resetError = () => {
+		errorMessages.value = {};
+		generalErrorMessage.value = '';
+	};
 
-  const validateField = (key: keyof Type) => {
-    let validationMessages: string | undefined;
-    const formValue = unref(form);
-    const rulesList = unref(rules);
-    const labelsName = unref(labels);
+	const validateField = (key: keyof Type) => {
+		let validationMessages: string | undefined;
+		const formValue = unref(form);
+		const rulesList = unref(rules);
+		const labelsName = unref(labels);
 
-    const value = formValue?.[key];
-    const fieldRulesAsObject: ValidationRuleCollector | undefined = (rulesList && rulesList[key]
+		const value = formValue?.[key];
+		const fieldRulesAsObject: ValidationRuleCollector | undefined = (rulesList && rulesList[key]
         && key in rulesList)
-      ? rulesList[key]
-      : undefined;
-    const label: string | undefined = (labelsName && key in labelsName && labelsName[key])
-      ? labelsName[key]
-      : undefined;
+			? rulesList[key]
+			: undefined;
+		const label: string | undefined = (labelsName && key in labelsName && labelsName[key])
+			? labelsName[key]
+			: undefined;
 
-    if (!fieldRulesAsObject) {
-      return;
-    }
+		if (!fieldRulesAsObject) {
+			return;
+		}
 
-    Object.entries<Validator>(fieldRulesAsObject)
-      .forEach(([ruleKey, ruleValue]: [string, Validator]) => {
-        if (validationMessages) {
-          return;
-        }
+		Object.entries<Validator>(fieldRulesAsObject)
+			.forEach(([ruleKey, ruleValue]: [string, Validator]) => {
+				if (validationMessages) {
+					return;
+				}
 
-        let isFieldValid = true;
-        let validationParam: unknown;
+				let isFieldValid = true;
+				let validationParam: unknown;
 
-        if (typeof ruleValue === 'object' && 'validator' in ruleValue && typeof ruleValue.validator === 'function') {
-          // Validate for validation has params
-          isFieldValid = ruleValue.validator(value);
-          validationParam = ruleValue.param;
-        } else if (typeof ruleValue === 'function') {
-          isFieldValid = ruleValue(value);
-        }
+				if (typeof ruleValue === 'object' && 'validator' in ruleValue && typeof ruleValue.validator === 'function') {
+					// Validate for validation has params
+					isFieldValid = ruleValue.validator(value);
+					validationParam = ruleValue.param;
+				} else if (typeof ruleValue === 'function') {
+					isFieldValid = ruleValue(value);
+				}
 
-        if (!isFieldValid) {
-          validationMessages = getFieldErrorMessage(label, ruleKey, validationParam);
-        }
-      });
+				if (!isFieldValid) {
+					validationMessages = getFieldErrorMessage(label, ruleKey, validationParam);
+				}
+			});
 
-    if (validationMessages) {
-      errorMessages.value[String(key)] = validationMessages;
-    } else {
-      delete errorMessages.value[String(key)];
-    }
-  };
+		if (validationMessages) {
+			errorMessages.value[String(key)] = validationMessages;
+		} else {
+			delete errorMessages.value[String(key)];
+		}
+	};
 
-  const validate = () => {
-    const formValue = unref(form);
+	const validate = () => {
+		const formValue = unref(form);
 
-    Object.keys(formValue || {}).forEach(validateField);
-  };
+		Object.keys(formValue || {}).forEach(validateField);
+	};
 
-  return {
-    errorMessages,
-    generalErrorMessage,
+	return {
+		errorMessages,
+		generalErrorMessage,
 
-    isFormValid,
+		isFormValid,
 
-    setErrorMessage,
-    setGenericError,
-    resetError,
-    validate,
-    validateField,
-  };
+		setErrorMessage,
+		setGenericError,
+		resetError,
+		validate,
+		validateField,
+	};
 };
 
 export default useForm;

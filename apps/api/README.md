@@ -7,6 +7,12 @@ Strapi comes with a full featured [Command Line Interface](https://docs.strapi.i
 - `pnpm` 10.10.0+
 - `mysql`
 
+### Setup env
+
+```bash
+  cp .env.example .env
+```
+
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)

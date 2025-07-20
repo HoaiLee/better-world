@@ -18,7 +18,6 @@ import BaseInput from 'components/common/form/BaseInput.vue';
 import type { BaseInputProps } from 'src/types/BaseInput.ts';
 import { computed, useAttrs } from 'vue';
 
-// eslint-disable-next-line vue/no-unused-properties
 type Props = BaseInputProps & {
 	placeholder?: string;
 };

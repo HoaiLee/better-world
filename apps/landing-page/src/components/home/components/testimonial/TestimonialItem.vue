@@ -2,13 +2,13 @@
 <template>
   <div class="shadow-100 rounded-box flex bg-white overflow-hidden">
     <div
-			class="w-17 h-full  relative"
-			:class="variant && variantColors[variant]"
-		>
+      class="w-17 h-full  relative"
+      :class="variant && variantColors[variant]"
+    >
       <span
-				class="absolute top-0 right-0 translate-x-[50%] translate-y-[100%]"
-				:class="variant && variantTextColors[variant]"
-			>
+        class="absolute top-0 right-0 translate-x-[50%] translate-y-[100%]"
+        :class="variant && variantTextColors[variant]"
+      >
         <svg
           width="34"
           height="26"
@@ -24,7 +24,7 @@
       </span>
     </div>
 
-    <div class="py-14 pl-11 pr-15 flex-1">
+    <div class="py-6 sm:py-14 px-6 md:pl-11 md:pr-15 flex-1">
       <div v-html="quote" />
 
       <div class="mt-5">
@@ -41,10 +41,9 @@ type Props = Testimonial & {
 	variant?: | 'light-pine'
 	| 'medium-pine'
 	| 'light-salmon'
-	| 'dark-salmon'
-}
+	| 'dark-salmon';
+};
 
-// eslint-disable-next-line vue/no-unused-properties
 defineProps<Props>();
 
 const variantColors = {

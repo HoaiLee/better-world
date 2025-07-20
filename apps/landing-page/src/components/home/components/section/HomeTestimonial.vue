@@ -5,24 +5,24 @@
         organizations, and fundraisers on BetterWorld</span>
     </div>
 
-    <div class="grid grid-cols-2 gap-x-[44px] gap-y-[42px] mt-[51px]">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-[44px] gap-y-[42px] mt-[51px]">
       <TestimonialItem
         v-for="(item, index) in itemsLimited"
         :key="index"
         v-bind="item"
-				:variant="variants[index]"
+        :variant="variants[index]"
       />
     </div>
-		
-		<div class="flex flex-wrap justify-center gap-9 mt-17">
-			<img
-				v-for="item in 7"
-				:key="item"
-				alt="Brand"
-				class="h-11 w-auto"
-				:src="`/images/home/brand/brand_${item + 1}.png`"
-			/>
-		</div>
+
+    <div class="flex flex-wrap justify-center gap-9 mt-17">
+      <img
+        v-for="item in 7"
+        :key="item"
+        alt="Brand"
+        class="h-11 w-auto"
+        :src="`/images/home/brand/brand_${item + 1}.png`"
+      >
+    </div>
   </div>
 </template>
 
@@ -33,7 +33,7 @@ import { useFetch } from 'src/utils/api.ts';
 import { computed, ref } from 'vue';
 import type { Pagination } from 'src/types/Panigation.ts';
 
-const testimonials = ref<Testimonial[]>([])
+const testimonials = ref<Testimonial[]>([]);
 
 const ITEM_LIMIT = 4;
 
@@ -45,12 +45,13 @@ const init = async (): Promise<void> => {
 	const response = await useFetch({
 		endpoint: 'testimonials',
 		method: 'GET',
-	})
+	});
 
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 	const paginator: Pagination<Testimonial[]> = await response.json();
-	
-	testimonials.value = [...paginator.data];
-}
 
-init()
+	testimonials.value = [...paginator.data];
+};
+
+void init();
 </script>
