@@ -31,6 +31,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-[9px] gap-y-3">
         <TextInput
           v-model="form.first_name"
+					:error-message="errorMessages.first_name"
           label="First name"
           class="col-span-1"
           placeholder="Mary"
@@ -39,6 +40,7 @@
 
         <TextInput
           v-model="form.last_name"
+					:error-message="errorMessages.last_name"
           label="Last name"
           class="col-span-1"
           placeholder="Smith"
@@ -47,6 +49,7 @@
 
         <TextInput
           v-model="form.organization"
+					:error-message="errorMessages.organization"
           label="Organization name"
           placeholder="BetterWorld"
           class="col-span-1"
@@ -55,6 +58,7 @@
 
         <TextInput
           v-model="form.email"
+					:error-message="errorMessages.email"
           label="Email"
           placeholder="mary@gmail.com"
           class="col-span-1"
@@ -110,6 +114,8 @@ import BWButton from 'components/common/button/BWButton.vue';
 import BWCheckboxGroup from 'components/common/checkbox/BWCheckboxGroup.vue';
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 import timezone from 'dayjs/plugin/timezone'
+import useForm, { required, email, type ValidationRules } from 'src/composables/useForm.ts';
+import { useFetch } from 'src/utils/api.ts';
 
 dayjs.extend(advancedFormat);
 dayjs.extend(timezone);
@@ -136,6 +142,16 @@ const form = ref<JoinUsForm>({
 	type_of_funds: null,
 	fundraising_target: null,
 });
+
+const rules: ValidationRules<typeof form.value> = {
+	first_name: { required },
+	last_name: { required },
+	organization: { required },
+	email: { required, email, },
+	phone_number: { required },
+	type_of_funds: { required },
+	fundraising_target: { required },
+};
 
 const TYPE_OF_FUNDRAISERS_OPTIONS = [
 	{
@@ -176,8 +192,23 @@ const TYPE_OF_FUNDRAISERS_OPTIONS = [
 	},
 ];
 
+const {
+	errorMessages, isFormValid, validate,
+} = useForm<typeof form.value>({ form, labels: {}, rules });
+
 const submit = (): void => {
-	// Todo: handle submit form
-	// console.log(form.value);
+	validate();
+	
+	if (!isFormValid.value) {
+		return;
+	}
+	
+	useFetch({
+		method: 'POST',
+		endpoint: 'join-us',
+		options: {
+			body: { ...form.value }
+		}
+	})
 };
 </script>

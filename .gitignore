@@ -3,15 +3,13 @@
 # Dependencies
 node_modules
 .pnp
+.turbo
 .pnp.js
 .yarn/install-state.gz
 
 # Local env files
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
 # Testing
 coverage
@@ -19,11 +17,7 @@ coverage
 # Turbo
 .turbo
 
-# Vercel
-.vercel
-
 # Build Outputs
-.next/
 out/
 build
 dist
@@ -40,7 +34,5 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-
-*storybook.log
 
 .idea/
