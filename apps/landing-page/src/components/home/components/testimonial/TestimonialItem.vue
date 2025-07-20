@@ -5,7 +5,10 @@
 			class="w-17 h-full  relative"
 			:class="variant && variantColors[variant]"
 		>
-      <span class="text-dark-pine absolute top-0 right-0 translate-x-[50%] translate-y-[100%]">
+      <span
+				class="absolute top-0 right-0 translate-x-[50%] translate-y-[100%]"
+				:class="variant && variantTextColors[variant]"
+			>
         <svg
           width="34"
           height="26"
@@ -49,5 +52,11 @@ const variantColors = {
 	'medium-pine': 'bg-medium-pine',
 	'light-salmon': 'bg-light-salmon',
 	'dark-salmon': 'bg-dark-salmon',
+} as const;
+const variantTextColors = {
+	'light-pine': 'text-dark-pine',
+	'medium-pine': 'text-light-pine',
+	'light-salmon': 'text-dark-salmon',
+	'dark-salmon': 'text-light-salmon',
 } as const;
 </script>

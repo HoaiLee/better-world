@@ -39,7 +39,7 @@ const init = async (): Promise<void> => {
 
 	const paginator: Pagination<Testimonial[]> = await response.json();
 	
-	testimonials.value = paginator.data;
+	testimonials.value = [...paginator.data];
 }
 
 init()

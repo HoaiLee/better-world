@@ -25,7 +25,16 @@ const computedClasses = computed(() => [
         class="bw-checkbox bg-white w-5 h-5 shrink-0 flex items-center justify-center rounded-[3px] transition-all duration-300"
         :class="computedClasses"
       >
-				<svg v-if="model" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<svg
+					:class="[
+						{
+							'w-0': !model,
+							'w-3': model,
+						},
+						'transition-all duration-200 easy-out',
+					]"
+					width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+				>
 					<rect width="12" height="12" rx="2" fill="#05E100"/>
 				</svg>
 			</div>

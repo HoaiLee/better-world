@@ -6,8 +6,7 @@ import { isEmpty } from 'lodash-es';
 export type FormValue = Date | string | number | boolean | string[]
   | Record<string, unknown> | null | undefined;
 
-export type ValidatorType = 'required' | 'requiredIf'
-  | 'email';
+export type ValidatorType = 'required' | 'requiredIf' | 'email';
 
 type ValidatorFunction = ((value?: FormValue) => boolean);
 

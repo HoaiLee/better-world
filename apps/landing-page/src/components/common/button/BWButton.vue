@@ -11,7 +11,7 @@
       :class="[
         buttonTypeClasses,
         buttonSizeClasses,
-        'flex relative w-full text-center justify-center items-center cursor-pointer text-button',
+        'flex relative w-full text-center justify-center items-center cursor-pointer text-button transition-all duration-200 ease-out',
         disabled || loading
           ? 'opacity-50 cursor-not-allowed'
           : 'hover:shadow hover:text-shadow transition-all duration-300 ease-in-out'
@@ -61,10 +61,10 @@ const SHADOW_CONTAINERS: Partial<Record<ButtonVariant, string>> = {
 };
 
 const BUTTON_CLASSES: Record<ButtonVariant, string> = {
-	primary: 'bg-denim text-white transition-all duration-200 ease-out hover:bg-dark-salmon active:bg-denim',
-	transparent: 'text-primary bg-transparent',
-	destructive: 'bg-dark-salmon text-white',
-	info: 'bg-light-denim text-primary',
+	primary: 'bg-denim text-white hover:bg-dark-salmon active:bg-denim',
+	transparent: 'text-primary bg-transparent hover:bg-light-salmon',
+	destructive: 'bg-dark-salmon text-white active:bg-dark-salmon',
+	info: 'bg-light-denim text-primary hover:bg-light-pine hover:text-white',
 };
 
 const SIZE_CLASSES: Record<ButtonSize, string> = {

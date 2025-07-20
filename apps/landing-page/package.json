@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin-ts": "^2.8.0",
+    "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
