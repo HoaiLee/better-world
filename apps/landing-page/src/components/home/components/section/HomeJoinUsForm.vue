@@ -25,7 +25,7 @@
     </div>
 
     <form
-      class="mt-6"
+      class="mt-6 relative"
       @submit.prevent="submit"
     >
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-[9px] gap-y-3">
@@ -92,6 +92,10 @@
           type="submit"
         />
       </div>
+			
+			<span class="absolute bottom-0 left-0 -translate-x-[110%] -translate-y-[10px]">
+				<img src="/images/home/arrow.png" width="69" height="59">
+			</span>
     </form>
   </div>
 </template>
