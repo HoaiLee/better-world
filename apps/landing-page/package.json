@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/ts-plugin": "^1.10.4",
     "@astrojs/vue": "^5.1.0",
+    "@popperjs/core": "^2.11.8",
     "@tailwindcss/vite": "^4.1.11",
     "advancedFormat": "link:dayjs/plugin/advancedFormat",
     "astro": "^5.12.0",

@@ -62,7 +62,7 @@
         />
 
         <TextInput
-          v-model="form.email"
+          v-model="form.phone_number"
           label="Phone number"
           class="col-span-1"
           placeholder="(123) 456-7890"
@@ -104,6 +104,11 @@ import dayjs from 'dayjs';
 import TextInput from 'components/common/input/TextInput.vue';
 import BWButton from 'components/common/button/BWButton.vue';
 import BWCheckboxGroup from 'components/common/checkbox/BWCheckboxGroup.vue';
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+import timezone from 'dayjs/plugin/timezone'
+
+dayjs.extend(advancedFormat);
+dayjs.extend(timezone);
 
 type JoinUsForm = {
 	first_name: string;
@@ -115,8 +120,8 @@ type JoinUsForm = {
 	fundraising_target: string | null;
 };
 
-const date = dayjs(new Date()).format('MMM ddd');
-const time = dayjs(new Date()).format('HH:mm:ss');
+const date = dayjs(new Date()).format('MMMM Do');
+const time = dayjs(new Date()).format('h:mm A z');
 
 const form = ref<JoinUsForm>({
 	first_name: '',

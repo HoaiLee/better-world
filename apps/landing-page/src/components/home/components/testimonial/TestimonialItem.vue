@@ -1,7 +1,10 @@
 <!-- eslint-disable max-len -->
 <template>
   <div class="shadow-100 rounded-box flex bg-white overflow-hidden">
-    <div class="w-17 h-full bg-light-pine relative">
+    <div
+			class="w-17 h-full  relative"
+			:class="variant && variantColors[variant]"
+		>
       <span class="text-dark-pine absolute top-0 right-0 translate-x-[50%] translate-y-[100%]">
         <svg
           width="34"
@@ -31,6 +34,20 @@
 <script setup lang="ts">
 import type { Testimonial } from 'src/types/Testimonial.ts';
 
+type Props = Testimonial & {
+	variant?: | 'light-pine'
+	| 'medium-pine'
+	| 'light-salmon'
+	| 'dark-salmon'
+}
+
 // eslint-disable-next-line vue/no-unused-properties
-defineProps<Testimonial>();
+defineProps<Props>();
+
+const variantColors = {
+	'light-pine': 'bg-light-pine',
+	'medium-pine': 'bg-medium-pine',
+	'light-salmon': 'bg-light-salmon',
+	'dark-salmon': 'bg-dark-salmon',
+} as const;
 </script>

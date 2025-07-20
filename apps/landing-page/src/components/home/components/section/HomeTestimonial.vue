@@ -10,6 +10,7 @@
         v-for="(item, index) in itemsLimited"
         :key="index"
         v-bind="item"
+				:variant="variants[index]"
       />
     </div>
   </div>
@@ -27,6 +28,8 @@ const testimonials = ref<Testimonial[]>([])
 const ITEM_LIMIT = 4;
 
 const itemsLimited = computed(() => testimonials.value?.slice(0, ITEM_LIMIT));
+
+const variants = ['light-pine', 'medium-pine', 'dark-salmon', 'light-salmon'] as const;
 
 const init = async (): Promise<void> => {
 	const response = await useFetch({
