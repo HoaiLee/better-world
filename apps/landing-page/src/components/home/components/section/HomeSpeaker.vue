@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <div class="py-[123px]">
+  <div class="pb-[123px]">
     <div class="flex justify-center">
       <div class="rounded-circle border-[19px] border-light-salmon relative">
         <img

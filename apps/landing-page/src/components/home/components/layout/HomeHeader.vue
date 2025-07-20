@@ -16,7 +16,7 @@
               v-for="item in HEADER_NAV_ITEMS"
               :key="item.value"
             >
-              <div class="flex items-center gap-0.5">
+              <div class="flex items-center gap-0.5 cursor-pointer">
                 <span class="lg:text-nav md:text-body2 text-nav font-medium">
                   {{ item.label }}
                 </span>

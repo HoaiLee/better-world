@@ -1,6 +1,6 @@
 <template>
   <HomeLayout>
-    <div class="bg-light-pine relative">
+    <div class="bg-light-pine relative overflow-hidden">
       <HomeHeader />
 
       <div class="container w-full z-100 relative mt-18 pb-12">
@@ -10,11 +10,11 @@
           <HomeJoinUsForm class="flex-1 md:max-w-[542px] h-fit" />
         </div>
       </div>
+			
+			<div class="h-[100px]" />
 
-      <!--
-        <div class="absolute h-[572px] w-[120%] bg-white rounded-[50%]
-        bottom-0 right-0 left-0"></div>
-      -->
+			<div class="absolute h-[420px] w-[200%] bg-white rounded-[70%]
+			bottom-0 right-0 left-0 -translate-x-[25%] translate-y-[25%]" />
     </div>
 
     <div class="bg-white">

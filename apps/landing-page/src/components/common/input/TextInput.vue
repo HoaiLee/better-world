@@ -2,7 +2,7 @@
   <BaseInput v-bind="labelProps">
     <input
       v-model="model"
-      class="placeholder:text-[rgba(58_78_97_0.35) text-body
+      class="placeholder:text-[rgba(58,_78,_97,_0.35)] text-body
       	text-denim font-normal outline-none w-full bg-transparent text-ellipsis"
       :class="{
         'mt-1': label,
