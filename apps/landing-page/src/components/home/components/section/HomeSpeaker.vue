@@ -4,7 +4,7 @@
     <div class="flex justify-center">
       <div class="rounded-circle border-[19px] border-light-salmon relative">
         <img
-          :src="speaker?.photo || '/images/home/speakers/sample.png'"
+          :src="'/images/home/speakers/sample.png'"
           alt="Author"
           width="129"
           height="192"
@@ -32,13 +32,13 @@
         </div>
 
         <div class="absolute bottom-0 right-0 z-100 translate-x-[50%]">
-          <BWChip label="First/Last Name" />
+          <BWChip :label="speaker?.name || 'Name'" />
         </div>
       </div>
     </div>
 
     <div class="mt-[29px] text-center">
-      <span class="text-h3">About the speaker, {{ speaker?.name }}</span>
+      <span class="text-h3">About the speaker, {{ speaker?.name || 'Name' }}</span>
     </div>
 
     <div class="flex flex-col gap-[22px] text-center max-w-[783px] mx-auto mt-4">

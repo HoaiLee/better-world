@@ -2,42 +2,49 @@
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
+### Requirements
+- `Node.js` 20+
+- `pnpm` 10.10.0+
+- `mysql`
+
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
 ```
-npm run develop
-# or
-yarn develop
+pnpm run develop
 ```
 
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
 
 ### `build`
 
 Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
 ```
-npm run build
-# or
-yarn build
+pnpm run build
 ```
 
-## ⚙️ Deployment
+## ⚙️ Data Setup
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
+1. Start Admin dashboard
+2. Register and login (No authentication)
+3. Set Content
 ```
-yarn strapi deploy
+- Testimonial
+1. [Create ContentType] (http://localhost:1337/admin/plugins/content-type-builder/content-types/api::testimonial.testimonial
+Fields:
+    quote: string;
+	author_name: string;
+	order: number;
+2. Create data: http://localhost:1337/admin/content-manager/collection-types/api::testimonial.testimonial?page=1&pageSize=10&sort=author_name%3AASC
+
+- Speaker
+1. [Create ContentType]
+Fields:
+    name: string;
+    bio: string;
+    photo: string;
+2. Create data
 ```
 
 ## 📚 Learn more
@@ -50,12 +57,8 @@ yarn strapi deploy
 
 Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
 
-## ✨ Community
-
 - [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
 - [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
 - [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
 
 ---
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>

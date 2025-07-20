@@ -13,11 +13,6 @@ better-world/
 ├── apps/
 │   ├── api/                 # Strapi CMS API
 │   └── landing-page/       # Astro + Vue.js frontend
-│       ├── src/
-│       │   ├── components/ # Vue components
-│       │   ├── pages/      # Astro pages
-│       │   └── stores/     # Pinia state management
-│       └── public/         # Static assets
 ├── packages/               # Shared packages(Types/Components)
 └── turbo.json             # Turborepo configuration
 ```
@@ -37,7 +32,7 @@ better-world/
    npm install turbo --global
    ```
 
-2**Start the landing page:**
+2**Start the landing page and API:**
    ```bash
    pnpm run dev
    ```
