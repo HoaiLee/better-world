@@ -1,7 +1,7 @@
 <template>
   <div
     class="flex flex-col w-full bg-white rounded px-4 py-[9px]
-  	shadow transition-shadow focus-within:shadow-[0_0_0_2px_rgba(0,123,255,0.5)] focus-within:[&>label]:text-[rgba(58,_78,_97,_0.35)]"
+  	shadow transition-shadow focus-within:[&>label]:text-[rgba(58,_78,_97,_0.35)]"
   >
     <label
       v-if="label"

@@ -2,8 +2,8 @@
 <template>
   <footer class="bg-denim text-white pt-[97px] pb-[61px] overflow-hidden">
     <div class="container">
-      <div class="grid grid-cols-4 md:grid-cols-[minmax(40%,_200px)_20%_20%_20%] gap-4">
-        <div class="col-span-4 md:col-span-1 flex flex-col mr-5">
+      <div class="grid grid-cols-4 md:grid-cols-[40%_20%_20%_20%] gap-4">
+        <div class="col-span-4 md:col-span-1 flex flex-col mr-5 max-w-[300px]">
           <a class="text-subtitle1">
             It’s easy to get started, and it’s Free
           </a>
